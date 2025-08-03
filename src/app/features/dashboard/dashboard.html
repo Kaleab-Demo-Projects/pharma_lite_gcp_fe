@@ -1,1 +1,7 @@
-<p>Welcome to the Pharmacy Dashboard!</p>
+<a routerLink="/" class="back-btn">← Back to Home</a>
+
+<ul>
+    @for (stat of stats; track stat.id) {
+        <li><strong>{{ stat.label }}:</strong> {{ stat.value }}</li>
+    }
+</ul>

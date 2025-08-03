@@ -1,1 +1,24 @@
-<p>Welcome to the Medicines List!</p>
+<a routerLink="/" class="back-btn">← Back to Home</a>
+
+<h2>Available Medicines</h2>
+
+<table class="medicine-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Dosage</th>
+      <th>Price</th>
+      <th>In Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(med of medicines; track med.id){
+        <tr>
+            <td>{{ med.name }}</td>
+            <td>{{ med.dosage }}</td>
+            <td>${{ med.price }}</td>
+            <td>{{ med.inStock ? 'Yes' : 'No' }}</td>
+          </tr>
+    }
+  </tbody>
+</table>
