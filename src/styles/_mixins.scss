@@ -1,0 +1,13 @@
+// Reusable SCSS mixins (e.g. flexCenter, button styles)
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin responsive-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }

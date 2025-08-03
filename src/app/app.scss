@@ -1,0 +1,39 @@
+@use '../../src/styles/variables' as variables;
+@use '../../src/styles/mixins' as mixins;
+@use '../../src/styles/components';
+@use '../../src/styles/layout';
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin: 2rem 2rem;
+  }
+
+  .card {
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1/0.8;
+    width: 100%;
+    border-radius: variables.$border-radius;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    span {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: variables.$border-radius;
+    }
+  }

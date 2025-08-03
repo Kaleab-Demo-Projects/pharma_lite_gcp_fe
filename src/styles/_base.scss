@@ -1,0 +1,13 @@
+// Reset and base typography styles
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #212529;
+  }
+  
+  h1, h2, h3 {
+    margin: 0 0 1rem 0;
+  }

@@ -1,0 +1,17 @@
+// Shared components styles (like buttons)
+@use './_variables.scss' as variables;
+@use 'sass:color';
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: variables.$primary-color;
+    color: white;
+    text-decoration: none;
+    border-radius: variables.$border-radius;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: color.adjust(variables.$primary-color, $lightness: -10%);
+    }
+  }
