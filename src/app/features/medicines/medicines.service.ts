@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
 
 export interface Medicine {
   id: Number,
@@ -12,11 +15,11 @@ export interface Medicine {
   providedIn: 'root'
 })
 export class MedicinesService {
-  getMedicines(): Medicine[] {
-    return [
-      { id: 1, name: 'Paracetamol', dosage: '500mg', price: 3.99, inStock: true },
-      { id: 2, name: 'Ibuprofen', dosage: '200mg', price: 4.99, inStock: false },
-      { id: 3, name: 'Amoxicillin', dosage: '250mg', price: 12.5, inStock: true }
-    ];
+  private readonly base = `${environment.apiBaseUrl}/medicines`;
+
+  constructor(private http: HttpClient) {}
+
+  getMedicines(): Observable<Medicine[]> {
+    return this.http.get<Medicine[]>(this.base);
   }
 }
