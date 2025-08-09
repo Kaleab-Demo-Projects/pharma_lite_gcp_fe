@@ -57,3 +57,29 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+Additional Notes:
+
+Cloud Run Deployment:
+
+1. Create Artifact Registry In Frankfurt:
+
+gcloud artifacts repositories create pharmacy-fe-repo \
+  --repository-format=docker \
+  --location=europe-west3 \
+  --project=personal-projects-467919 \
+  --description="Artifact repo for pharmacy-app-fe frontend"
+
+2. Build and Submit Docker Image to Frankfurt Artifact Registry
+
+gcloud builds submit \
+  --tag europe-west3-docker.pkg.dev/personal-projects-467919/pharmacy-fe-repo/pharmacy-app-fe
+
+3. Deploy to Cloud Run (in Frankfurt)
+
+gcloud run deploy pharmacy-app-fe \
+  --image=europe-west3-docker.pkg.dev/personal-projects-467919/pharmacy-fe-repo/pharmacy-app-fe \
+  --platform=managed \
+  --region=europe-west3 \
+  --allow-unauthenticated \
+  --project=personal-projects-467919

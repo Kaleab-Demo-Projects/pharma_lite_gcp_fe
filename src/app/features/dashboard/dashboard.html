@@ -1,7 +1,7 @@
 <a routerLink="/" class="back-btn">← Back to Home</a>
 
 <ul>
-    @for (stat of stats; track stat.id) {
-        <li><strong>{{ stat.label }}:</strong> {{ stat.value }}</li>
-    }
+  @for (stat of ((stats$ | async) ?? []); track stat.id) {
+    <li><strong>{{ stat.label }}:</strong> {{ stat.value }}</li>
+  }
 </ul>
