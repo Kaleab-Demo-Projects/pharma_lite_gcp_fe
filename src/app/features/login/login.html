@@ -1,0 +1,21 @@
+<section class="container">
+    <div class="auth-card">
+      <h2>Sign in</h2>
+  
+      <form (ngSubmit)="submit()" class="auth-form">
+        <label>
+          <span>Username</span>
+          <input [(ngModel)]="username" name="username" required />
+        </label>
+  
+        <label>
+          <span>Password</span>
+          <input [(ngModel)]="password" name="password" type="password" required />
+        </label>
+  
+        <button class="btn" type="submit">Sign in</button>
+  
+        <p class="error" *ngIf="error">{{ error }}</p>
+      </form>
+    </div>
+  </section>

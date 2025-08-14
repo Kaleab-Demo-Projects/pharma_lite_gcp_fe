@@ -1,0 +1,54 @@
+@use '../../../styles/variables' as variables;
+@use '../../../styles/mixins' as mixins;
+
+.auth-card {
+  @include mixins.responsive-container;
+  max-width: 420px;
+  margin: 6rem auto 0;
+  padding: 2rem;
+  background: #fff;
+  border-radius: variables.$border-radius;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .auth-form {
+    display: grid;
+    gap: 1rem;
+
+    label {
+      display: grid;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      input {
+        padding: 0.75rem 0.9rem;
+        border: 1px solid #e3e6ea;
+        border-radius: variables.$border-radius;
+        font-size: 1rem;
+        outline: none;
+
+        &:focus {
+          border-color: variables.$primary-color;
+          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.12);
+        }
+      }
+    }
+
+    .btn {
+      justify-self: start;
+    }
+
+    .error {
+      margin: 0.25rem 0 0;
+      color: #c0392b;
+      font-size: 0.95rem;
+    }
+  }
+}
