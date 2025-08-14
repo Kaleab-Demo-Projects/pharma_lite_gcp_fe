@@ -1,0 +1,25 @@
+/* src/app/app.scss */
+@use '../styles/variables' as variables;
+@use '../styles/mixins' as mixins;
+
+.topbar {
+  @include mixins.responsive-container;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .brand {
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}

@@ -1,1 +1,13 @@
-  <router-outlet></router-outlet>
+<!-- src/app/app.html -->
+<header class="topbar container">
+  <nav class="nav">
+    <a routerLink="/" class="brand">Pharmacy App</a>
+
+    <div class="spacer"></div>
+
+    <!-- Only show when authenticated -->
+    <button class="btn" *ngIf="auth.isLoggedIn" (click)="logout()">Logout</button>
+  </nav>
+</header>
+
+<router-outlet />
